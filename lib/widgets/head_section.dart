@@ -43,7 +43,7 @@ class HeadSection extends StatelessWidget {
             Row(
               children: [
                 const Text(
-                  "@biz84",
+                  "@biz84 · ",
                   style: TextStyle(
                     color: Colors.grey,
                   ),
@@ -52,7 +52,7 @@ class HeadSection extends StatelessWidget {
                 TextButton(
                   style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
-                      minimumSize: const Size(80, 30),
+                      minimumSize: const Size(50, 30),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       // alignment: Alignment.centerLeft,
 

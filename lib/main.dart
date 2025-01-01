@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_embed_card/svg_asset.dart';
 import 'package:twitter_embed_card/vector_icon.dart';
+
+import 'package:twitter_embed_card/widgets/body_section.dart';
 import 'package:twitter_embed_card/widgets/head_section.dart';
 
 void main() async {
@@ -60,31 +62,69 @@ class TwitterEmbedCard extends StatelessWidget {
     //   ],
     // );
 
-    return Column(
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const HeadSection(),
-        Container(
-          padding: const EdgeInsets.only(top: 16),
-          child: Column(
-            spacing: 16,
-            children: [
-              const Text(
-                """Did you know?\n\nWhen you call `MediaQuery.of(context)` inside a build method, the widget will rebuild when *any* of the MediaQuery properties change.
-                \n\nBut there's a better way that lets you depend only on the properties you care about (and minimize unnecessary rebuilds). 👇🏾""",
-                style: TextStyle(
-                  fontSize: 16,
-                ),
+        HeadSection(),
+        BodySection(),
+        SizedBox(height: 10),
+        Row(
+          children: [
+            Text(
+              "10:00 AM · 1 Jan, 2022",
+              style: TextStyle(
+                color: Colors.black54,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                clipBehavior: Clip.hardEdge,
-                child: Image.asset("assets/media-query-banner.jpg"),
-              )
-            ],
-          ),
+            ),
+            Spacer(),
+            VectorIcon(
+              asset: SvgAsset.info,
+              height: 18,
+            ),
+          ],
         ),
+        Divider(),
+        Row(
+          children: [
+            VectorIcon(
+              asset: SvgAsset.heartRed,
+              height: 18,
+            ),
+            SizedBox(width: 5),
+            Text("1000"),
+            SizedBox(width: 20),
+            VectorIcon(
+              asset: SvgAsset.comment,
+              height: 18,
+            ),
+            SizedBox(width: 5),
+            Text("Reply"),
+            SizedBox(width: 20),
+            VectorIcon(
+              asset: SvgAsset.link,
+              height: 18,
+            ),
+            SizedBox(width: 5),
+            Text("Copy Link"),
+          ],
+        ),
+        // Row(
+        //   mainAxisSize: MainAxisSize.max,
+        //   children: [
+        //     Container(
+        //       padding: const EdgeInsets.symmetric(
+        //         vertical: 10,
+        //       ),
+        //       decoration: BoxDecoration(
+        //         border: Border.all(
+        //           color: Colors.black12,
+        //         ),
+        //         borderRadius: BorderRadius.circular(10),
+        //       ),
+        //       child: const Text("Read 50 replies"),
+        //     ),
+        //   ],
+        // )
       ],
     );
   }
