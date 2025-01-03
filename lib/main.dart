@@ -62,13 +62,13 @@ class TwitterEmbedCard extends StatelessWidget {
     //   ],
     // );
 
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        HeadSection(),
-        BodySection(),
-        SizedBox(height: 10),
-        Row(
+        const HeadSection(),
+        const BodySection(),
+        const SizedBox(height: 10),
+        const Row(
           children: [
             Text(
               "10:00 AM · 1 Jan, 2022",
@@ -83,8 +83,8 @@ class TwitterEmbedCard extends StatelessWidget {
             ),
           ],
         ),
-        Divider(),
-        Row(
+        const Divider(),
+        const Row(
           children: [
             VectorIcon(
               asset: SvgAsset.heartRed,
@@ -108,23 +108,33 @@ class TwitterEmbedCard extends StatelessWidget {
             Text("Copy Link"),
           ],
         ),
-        // Row(
-        //   mainAxisSize: MainAxisSize.max,
-        //   children: [
-        //     Container(
-        //       padding: const EdgeInsets.symmetric(
-        //         vertical: 10,
-        //       ),
-        //       decoration: BoxDecoration(
-        //         border: Border.all(
-        //           color: Colors.black12,
-        //         ),
-        //         borderRadius: BorderRadius.circular(10),
-        //       ),
-        //       child: const Text("Read 50 replies"),
-        //     ),
-        //   ],
-        // )
+        const SizedBox(height: 16),
+        Material(
+          shape: const StadiumBorder(
+              side: BorderSide(
+            color: Colors.black,
+            width: 1,
+          )),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16),
+            onTap: () {},
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 6),
+                  child: Text(
+                    "Read 50 replies",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }
