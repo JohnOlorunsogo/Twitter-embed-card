@@ -4,6 +4,7 @@ import 'package:twitter_embed_card/vector_icon.dart';
 
 import 'package:twitter_embed_card/widgets/body_section.dart';
 import 'package:twitter_embed_card/widgets/head_section.dart';
+import 'package:twitter_embed_card/widgets/text_button.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -62,13 +63,13 @@ class TwitterEmbedCard extends StatelessWidget {
     //   ],
     // );
 
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const HeadSection(),
-        const BodySection(),
-        const SizedBox(height: 10),
-        const Row(
+        HeadSection(),
+        BodySection(),
+        SizedBox(height: 10),
+        Row(
           children: [
             Text(
               "10:00 AM · 1 Jan, 2022",
@@ -83,8 +84,8 @@ class TwitterEmbedCard extends StatelessWidget {
             ),
           ],
         ),
-        const Divider(),
-        const Row(
+        Divider(),
+        Row(
           children: [
             VectorIcon(
               asset: SvgAsset.heartRed,
@@ -108,33 +109,8 @@ class TwitterEmbedCard extends StatelessWidget {
             Text("Copy Link"),
           ],
         ),
-        const SizedBox(height: 16),
-        Material(
-          shape: const StadiumBorder(
-              side: BorderSide(
-            color: Colors.black,
-            width: 1,
-          )),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(16),
-            onTap: () {},
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6),
-                  child: Text(
-                    "Read 50 replies",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        )
+        SizedBox(height: 16),
+        CustomTextButton()
       ],
     );
   }
